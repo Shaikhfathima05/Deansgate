@@ -1,0 +1,98 @@
+.amenities {
+    padding: 10rem 0;
+    background: var(--color-bg);
+    position: relative;
+}
+
+.amenities__bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(8rem, 20vw, 24rem);
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.02);
+    white-space: nowrap;
+    pointer-events: none;
+    letter-spacing: 0.2em;
+}
+
+.amenities__header {
+    text-align: center;
+    margin-bottom: 6rem;
+    position: relative;
+    z-index: 5;
+}
+
+.amenities__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    position: relative;
+    z-index: 5;
+}
+
+.amenities__card {
+    background: var(--gradient-card);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.amenities__card:hover {
+    border-color: var(--color-gold);
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg), var(--shadow-gold);
+    background: #FFFFFF;
+}
+
+.amenities__card-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.2));
+}
+
+.amenities__card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    margin-bottom: 0.8rem;
+}
+
+.amenities__card-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+@media (max-width: 1200px) {
+    .amenities__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .amenities__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .amenities {
+        padding: 8rem 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .amenities__grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .amenities__card {
+        padding: 2.5rem 1.5rem;
+    }
+}

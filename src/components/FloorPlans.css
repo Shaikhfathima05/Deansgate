@@ -1,0 +1,199 @@
+.floorplans {
+    padding: 10rem 0;
+    background: var(--color-bg-2);
+    position: relative;
+}
+
+.floorplans__header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+/* Tabs */
+.floorplans__tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 5rem;
+    flex-wrap: wrap;
+}
+
+.floorplans__tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 2.5rem;
+    background: var(--gradient-card);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+    min-width: 200px;
+}
+
+.floorplans__tab span:first-child {
+    font-size: 2rem;
+    margin-bottom: 0.2rem;
+}
+
+.floorplans__tab span:nth-child(2) {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.floorplans__tab-tag {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-text-dim);
+}
+
+.floorplans__tab:hover,
+.floorplans__tab--active {
+    border-color: var(--color-gold);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md), var(--shadow-gold);
+}
+
+.floorplans__tab--active {
+    background: rgba(201, 168, 76, 0.1);
+}
+
+.floorplans__tab--active span:nth-child(2) {
+    color: var(--color-gold);
+}
+
+/* Content */
+.floorplans__content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+    align-items: start;
+}
+
+/* Visual */
+.floorplans__plan-render {
+    background: var(--gradient-card);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.floorplans__plan-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    margin-bottom: 0.5rem;
+}
+
+.floorplans__plan-sublabel {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-text-dim);
+}
+
+/* Floor plan image */
+.floorplans__plan-img-wrap {
+    background: #FFFFFF;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-top: 2rem;
+    border: 1px solid var(--color-border-light);
+}
+
+.floorplans__plan-img {
+    width: 100%;
+    height: 450px;
+    object-fit: contain;
+    padding: 2rem;
+    transition: transform 0.8s ease;
+}
+
+.floorplans__plan-img--blur {
+    filter: blur(4px);
+}
+
+.floorplans__plan-img-wrap:hover .floorplans__plan-img {
+    transform: scale(1.05);
+}
+
+/* Specs */
+.floorplans__spec-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+}
+
+.floorplans__spec-desc {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: 3rem;
+}
+
+.floorplans__spec-table {
+    background: #FFFFFF;
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+}
+
+.floorplans__spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.floorplans__spec-row:last-child {
+    border-bottom: none;
+}
+
+.floorplans__spec-row:hover {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.floorplans__spec-key {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.floorplans__spec-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-gold);
+}
+
+@media (max-width: 1100px) {
+    .floorplans__content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .floorplans__tabs {
+        gap: 1rem;
+    }
+
+    .floorplans__tab {
+        padding: 1.2rem 1.5rem;
+        min-width: 140px;
+    }
+}

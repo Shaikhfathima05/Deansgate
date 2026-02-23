@@ -1,0 +1,66 @@
+═══════════════════════════════════════════════════════════════
+  HOW TO FIND YOUR SUPABASE ANON KEY - VISUAL GUIDE
+═══════════════════════════════════════════════════════════════
+
+STEP 1: Go to Supabase Dashboard
+→ https://supabase.com/dashboard
+
+STEP 2: Click on your project "Deansgate"
+
+STEP 3: Look at the LEFT SIDEBAR, click the GEAR ICON ⚙️
+        (This is "Project Settings")
+
+STEP 4: In the settings menu, click "API"
+
+STEP 5: You'll see a page with several sections:
+
+┌─────────────────────────────────────────────────────────────┐
+│  Project API                                                 │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│  Project URL                                                 │
+│  https://ypseudvmvxgstmduuotw.supabase.co                   │
+│  [Copy]                                                      │
+│                                                              │
+│  ─────────────────────────────────────────────────────────  │
+│                                                              │
+│  Project API keys                                            │
+│                                                              │
+│  anon public                                    [Reveal] 👁️  │
+│  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3M...  [Copy]    │
+│  ↑↑↑ THIS IS YOUR ANON KEY ↑↑↑                              │
+│                                                              │
+│  service_role secret                            [Reveal] 👁️  │
+│  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3M...  [Copy]    │
+│  ⚠️ DO NOT USE THIS ONE IN FRONTEND ⚠️                       │
+│                                                              │
+└─────────────────────────────────────────────────────────────┘
+
+STEP 6: Click the [Copy] button next to "anon public"
+
+STEP 7: Open task1-A/.env file
+
+STEP 8: Paste it here:
+        VITE_SUPABASE_ANON_KEY=paste_here
+
+STEP 9: Save the file
+
+STEP 10: Restart dev server:
+         cd task1-A
+         npm run dev
+
+DONE! ✅
+
+═══════════════════════════════════════════════════════════════
+  IMPORTANT NOTES
+═══════════════════════════════════════════════════════════════
+
+✅ USE: anon public key (safe for frontend)
+❌ DON'T USE: service_role key (backend only, has full access)
+
+The anon key is VERY LONG (about 200+ characters)
+It starts with: eyJhbGci...
+It's safe to use in your frontend code
+It only allows operations permitted by RLS policies
+
+═══════════════════════════════════════════════════════════════
