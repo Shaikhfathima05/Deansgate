@@ -1,0 +1,147 @@
+import { useState, useEffect } from 'react';
+
+export default function WhatsAppSettings() {
+  const [whatsappData, setWhatsappData] = useState({
+    phoneNumber: '+91 98449 35531',
+    message: "Hi, I'm interested in Deansgate Villas. Please share more details."
+  });
+  const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    const saved = localStorage.getItem('whatsappSettings');
+    if (saved) {
+      setWhatsappData(JSON.parse(saved));
+    }
+  }, []);
+
+  const handleSave = () => {
+    localStorage.setItem('whatsappSettings', JSON.stringify(whatsappData));
+    setMessage('WhatsApp settings saved successfully!');
+    setTimeout(() => setMessage(''), 3000);
+  };
+
+  const testWhatsApp = () => {
+    const cleanNumber = whatsappData.phoneNumber.replace(/[^\d]/g, '');
+    const encodedMessage = encodeURIComponent(whatsappData.message);
+    const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  return (
+    <div style={{ maxWidth: '600px' }}>
+      <div style={{
+        background: 'white',
+        borderRadius: '12px',
+        padding: '2rem',
+        boxShadow: '0 4px 20px rgba(0,0,0,0.08)'
+      }}>
+        <h2 style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#0f172a', marginBottom: '2rem' }}>
+          WhatsApp Settings
+        </h2>
+
+        {message && (
+          <div style={{
+            background: '#d1fae5',
+            border: '1px solid #a7f3d0',
+            color: '#065f46',
+            padding: '1rem',
+            borderRadius: '8px',
+            marginBottom: '1.5rem'
+          }}>
+            {message}
+          </div>
+        )}
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <div>
+            <label style={{ display: 'block', fontWeight: '600', color: '#0f172a', marginBottom: '0.5rem' }}>
+              WhatsApp Phone Number
+            </label>
+            <input
+              type="text"
+              value={whatsappData.phoneNumber}
+              onChange={(e) => setWhatsappData({ ...whatsappData, phoneNumber: e.target.value })}
+              style={{
+                width: '100%',
+                padding: '0.75rem',
+                border: '1px solid #d1d5db',
+                borderRadius: '8px'
+              }}
+              placeholder="+91 98449 35531"
+            />
+            <div style={{ fontSize: '0.8rem', color: '#475569', marginTop: '0.5rem' }}>
+              Include country code (e.g., +91 for India)
+            </div>
+          </div>
+
+          <div>
+            <label style={{ display: 'block', fontWeight: '600', color: '#0f172a', marginBottom: '0.5rem' }}>
+              Predefined Message
+            </label>
+            <textarea
+              value={whatsappData.message}
+              onChange={(e) => setWhatsappData({ ...whatsappData, message: e.target.value })}
+              style={{
+                width: '100%',
+                minHeight: '100px',
+                padding: '0.75rem',
+                border: '1px solid #d1d5db',
+                borderRadius: '8px',
+                resize: 'vertical',
+                fontFamily: 'inherit'
+              }}
+              placeholder="Enter the message that will be pre-filled when users click WhatsApp button"
+            />
+          </div>
+
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <button
+              onClick={handleSave}
+              style={{
+                background: 'linear-gradient(135deg, #7c3aed, #06b6d4)',
+                color: 'white',
+                padding: '1rem 2rem',
+                borderRadius: '8px',
+                fontWeight: '600',
+                border: 'none',
+                cursor: 'pointer'
+              }}
+            >
+              Save Settings
+            </button>
+
+            <button
+              onClick={testWhatsApp}
+              style={{
+                background: '#25D366',
+                color: 'white',
+                padding: '1rem 2rem',
+                borderRadius: '8px',
+                fontWeight: '600',
+                border: 'none',
+                cursor: 'pointer'
+              }}
+            >
+              Test WhatsApp
+            </button>
+          </div>
+
+          <div style={{
+            background: '#f8fafc',
+            padding: '1rem',
+            borderRadius: '8px',
+            border: '1px solid #e2e8f0'
+          }}>
+            <h4 style={{ fontWeight: '600', color: '#0f172a', marginBottom: '0.5rem' }}>Preview:</h4>
+            <div style={{ fontSize: '0.9rem', color: '#475569' }}>
+              WhatsApp URL: https://wa.me/{whatsappData.phoneNumber.replace(/[^\d]/g, '')}
+            </div>
+            <div style={{ fontSize: '0.9rem', color: '#475569', marginTop: '0.5rem' }}>
+              Message: "{whatsappData.message}"
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

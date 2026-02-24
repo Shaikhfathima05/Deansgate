@@ -1,7 +1,18 @@
 .about {
-    padding: 10rem 0;
-    background: var(--color-section-light);
+    padding: 12rem 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
     position: relative;
+    overflow: hidden;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #7c3aed, transparent);
 }
 
 .about__inner {
@@ -43,24 +54,52 @@
     align-items: center;
     gap: 1.2rem;
     font-size: 1rem;
-    color: var(--color-text-body);
+    color: #475569;
     font-weight: 500;
-    padding: 1rem 1.5rem;
-    background: rgba(124, 58, 237, 0.05);
-    border-radius: var(--radius-sm);
-    border: 1px solid rgba(124, 58, 237, 0.15);
-    transition: var(--transition);
+    padding: 1.2rem 1.8rem;
+    background: rgba(124, 58, 237, 0.08);
+    border-radius: 12px;
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.about__highlight::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(135deg, #7c3aed, #06b6d4);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
 }
 
 .about__highlight:hover {
-    border-color: var(--color-primary);
-    background: rgba(124, 58, 237, 0.08);
-    transform: translateX(6px);
+    border-color: #7c3aed;
+    background: rgba(124, 58, 237, 0.12);
+    transform: translateX(8px);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.15);
+}
+
+.about__highlight:hover::before {
+    transform: scaleY(1);
 }
 
 .about__highlight-icon {
-    color: var(--color-primary);
-    font-size: 1.1rem;
+    color: #7c3aed;
+    font-size: 1.2rem;
+    padding: 8px;
+    background: rgba(124, 58, 237, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.about__highlight:hover .about__highlight-icon {
+    background: rgba(124, 58, 237, 0.2);
+    transform: scale(1.1);
 }
 
 /* Stats Section */
@@ -213,36 +252,101 @@
     color: rgba(255, 255, 255, 0.6);
 }
 
+/* Mobile-first responsive design */
 @media (max-width: 1200px) {
     .about__inner {
-        gap: 4rem;
+        gap: 6rem;
+    }
+    .about {
+        padding: 10rem 0;
     }
 }
 
 @media (max-width: 1024px) {
     .about__inner {
         grid-template-columns: 1fr;
+        gap: 4rem;
+        text-align: center;
     }
-
     .about {
         padding: 8rem 0;
+    }
+    .about__stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        padding: 6rem 0;
+    }
+    .about__inner {
+        gap: 3rem;
+    }
+    .about__project-img {
+        height: 300px;
+    }
+    .about__stat-card {
+        padding: 2rem 1.5rem;
+    }
+    .about__stat-value {
+        font-size: 2rem;
+    }
+    .about__highlight {
+        padding: 1rem 1.5rem;
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 600px) {
-    .about__stats-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .about__project-img {
-        height: 300px;
-    }
-
     .about {
-        padding: 5rem 0;
+        padding: 4rem 0;
     }
-
     .about__inner {
         gap: 2.5rem;
+    }
+    .about__stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .about__project-img {
+        height: 250px;
+    }
+    .about__stat-card {
+        padding: 1.5rem 1rem;
+    }
+    .about__stat-value {
+        font-size: 1.8rem;
+    }
+    .about__stat-icon {
+        font-size: 2rem;
+    }
+    .about__highlight {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    .about__highlight-icon {
+        font-size: 1rem;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about {
+        padding: 3rem 0;
+    }
+    .about__desc {
+        font-size: 1rem;
+    }
+    .about__stat-card {
+        padding: 1.2rem 0.8rem;
+    }
+    .about__stat-value {
+        font-size: 1.5rem;
+    }
+    .about__badge-strip {
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
     }
 }
