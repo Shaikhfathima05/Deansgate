@@ -95,15 +95,12 @@ export default function Footer() {
                             <h4 className="footer__col-title">Contact Us</h4>
                             <div className="footer__contact-list">
                                 <div className="footer__contact-item">
-                                    <span>📞</span>
                                     <a href="tel:+919844935531">+91 98449 35531</a>
                                 </div>
                                 <div className="footer__contact-item">
-                                    <span>✉️</span>
                                     <a href="mailto:support@winstoneprojects.com">support@winstoneprojects.com</a>
                                 </div>
                                 <div className="footer__contact-item">
-                                    <span>📍</span>
                                     <span>IVC Road, Yelahanka,<br />Bengaluru – 560064</span>
                                 </div>
                             </div>

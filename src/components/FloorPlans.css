@@ -1,7 +1,20 @@
 .floorplans {
     padding: 10rem 0;
-    background: var(--color-bg-2);
+    background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
     position: relative;
+}
+
+/* Override section text for light gray bg */
+.floorplans .section-label {
+    color: var(--color-primary);
+}
+
+.floorplans .section-title {
+    color: var(--color-text-heading);
+}
+
+.floorplans .section-subtitle {
+    color: var(--color-text-body);
 }
 
 .floorplans__header {
@@ -25,8 +38,8 @@
     align-items: center;
     gap: 0.5rem;
     padding: 1.5rem 2.5rem;
-    background: var(--gradient-card);
-    border: 1px solid var(--color-border-light);
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     cursor: pointer;
     transition: var(--transition);
@@ -42,29 +55,30 @@
     font-family: 'Playfair Display', serif;
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--color-text);
+    color: var(--color-text-heading);
+    transition: var(--transition);
 }
 
 .floorplans__tab-tag {
     font-size: 0.8rem;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--color-text-dim);
+    color: var(--color-text-body);
 }
 
 .floorplans__tab:hover,
 .floorplans__tab--active {
-    border-color: var(--color-gold);
+    border-color: var(--color-primary);
     transform: translateY(-5px);
-    box-shadow: var(--shadow-md), var(--shadow-gold);
+    box-shadow: var(--shadow-hover);
 }
 
 .floorplans__tab--active {
-    background: rgba(201, 168, 76, 0.1);
+    background: rgba(124, 58, 237, 0.08);
 }
 
 .floorplans__tab--active span:nth-child(2) {
-    color: var(--color-gold);
+    color: var(--color-primary);
 }
 
 /* Content */
@@ -77,36 +91,35 @@
 
 /* Visual */
 .floorplans__plan-render {
-    background: var(--gradient-card);
-    border: 1px solid var(--color-border-light);
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
     padding: 3rem;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-card);
 }
 
 .floorplans__plan-name {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    color: var(--color-gold);
+    color: var(--color-primary);
     margin-bottom: 0.5rem;
 }
 
 .floorplans__plan-sublabel {
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--color-text-dim);
 }
 
-/* Floor plan image */
 .floorplans__plan-img-wrap {
-    background: #FFFFFF;
+    background: rgba(74, 222, 128, 0.05);
     border-radius: var(--radius-md);
     overflow: hidden;
     margin-top: 2rem;
-    border: 1px solid var(--color-border-light);
+    border: 1px solid rgba(74, 222, 128, 0.2);
 }
 
 .floorplans__plan-img {
@@ -164,7 +177,7 @@
 }
 
 .floorplans__spec-row:hover {
-    background: rgba(0, 0, 0, 0.02);
+    background: rgba(74, 222, 128, 0.08);
 }
 
 .floorplans__spec-key {
@@ -175,9 +188,9 @@
 
 .floorplans__spec-val {
     font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    color: var(--color-gold);
+    color: #D4AF37;
 }
 
 @media (max-width: 1100px) {

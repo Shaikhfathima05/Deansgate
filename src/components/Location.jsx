@@ -3,37 +3,31 @@ import './Location.css';
 
 const highlights = [
     {
-        icon: '✈️',
         title: 'Kempegowda Int\'l Airport',
         distance: '~15 min',
         desc: 'Direct access via IVC Road to KIAL — ideal for frequent flyers and NRI investors.',
     },
     {
-        icon: '🏢',
         title: 'Business Parks',
         distance: 'Nearby',
         desc: 'Manyata Tech Park, Kirloskar Business Park, and Aerospace SEZ within easy reach.',
     },
     {
-        icon: '💻',
         title: 'Tech Parks & IT Hubs',
         distance: '20–30 min',
         desc: 'Close to Hebbal IT cluster, Yelahanka tech corridor, and upcoming STRR connections.',
     },
     {
-        icon: '🎓',
         title: 'Schools & Colleges',
         distance: 'In vicinity',
         desc: 'Canadian International School, Ryan International, Vidyashilp Academy nearby.',
     },
     {
-        icon: '🏥',
         title: 'Hospitals & Healthcare',
         distance: 'Close by',
         desc: 'Columbia Asia, Manipal Hospital, and Apollo Clinic within a short drive.',
     },
     {
-        icon: '🛍️',
         title: 'Retail & Entertainment',
         distance: 'Minutes away',
         desc: 'Elements Mall, Esteem Mall, and upcoming retail corridors on NH-44.',
@@ -57,7 +51,7 @@ export default function Location() {
                 <div className="location__header">
                     <span className="section-label">Location Highlights</span>
                     <h2 className="section-title">
-                        Strategically <span>Well-Connected</span>
+                        📍 Strategically <span>Well-Connected</span>
                     </h2>
                     <div className="gold-divider" />
                     <p className="section-subtitle">
@@ -68,17 +62,16 @@ export default function Location() {
 
                 {/* Map + Location Details — Side by Side */}
                 <div className="location__map-section">
-                    {/* Map Image */}
+                    {/* Interactive Google Map */}
                     <div className="location__map-img-wrap">
-                        <img
-                            src="/images/img6.png"
-                            alt="Deansgate Location Map — IVC Road, Bengaluru"
-                            className="location__map-img"
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62176.89377058869!2d77.53461842167967!3d13.108600000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae22db0f18b7c7%3A0x776d7d5f3b3e3e3e!2sIVC%20Road%2C%20Yelahanka%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                            className="location__map-iframe"
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Deansgate Location - IVC Road, Bengaluru"
                         />
-                        <div className="location__map-pin">
-                            <span className="location__map-pin-dot" />
-                            <span className="location__map-pin-label">Deansgate · IVC Road</span>
-                        </div>
                     </div>
 
                     {/* Location Details */}
@@ -122,7 +115,6 @@ export default function Location() {
                 <div className="location__grid">
                     {highlights.map((item, i) => (
                         <div key={i} className="location__card">
-                            <div className="location__card-icon">{item.icon}</div>
                             <div className="location__card-badge">{item.distance}</div>
                             <h3 className="location__card-title">{item.title}</h3>
                             <p className="location__card-desc">{item.desc}</p>

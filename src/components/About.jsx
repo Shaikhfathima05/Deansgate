@@ -3,10 +3,10 @@ import { gsap } from 'gsap';
 import './About.css';
 
 const stats = [
-    { label: 'Saleable Area', value: '2850', unit: 'sq.ft', icon: '📐' },
-    { label: 'Carpet Area', value: '1950', unit: 'sq.ft', icon: '🏠' },
-    { label: 'Private Garden', value: '800', unit: 'sq.ft', icon: '🌿' },
-    { label: 'Terrace Area', value: '400', unit: 'sq.ft', icon: '🌅' },
+    { label: 'Saleable Area', value: '2850', unit: 'sq.ft' },
+    { label: 'Carpet Area', value: '1950', unit: 'sq.ft' },
+    { label: 'Private Garden', value: '800', unit: 'sq.ft' },
+    { label: 'Terrace Area', value: '400', unit: 'sq.ft' },
 ];
 
 const highlights = [
@@ -48,6 +48,7 @@ export default function About() {
                     <div className="about__text">
                         <span className="section-label">About the Project</span>
                         <h2 className="section-title" ref={titleRef}>
+                            <span className="word">⭐</span>{' '}
                             <span className="word">A</span>{' '}
                             <span className="word">New</span>{' '}
                             <span className="word">Standard</span>{' '}
@@ -92,7 +93,6 @@ export default function About() {
                         <div className="about__stats-grid">
                             {stats.map((stat, i) => (
                                 <div key={i} className="about__stat-card">
-                                    <div className="about__stat-icon">{stat.icon}</div>
                                     <div className="about__stat-value">
                                         {stat.value}<span className="about__stat-unit">{stat.unit}</span>
                                     </div>

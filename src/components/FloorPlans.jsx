@@ -4,9 +4,8 @@ import './FloorPlans.css';
 const plans = [
     {
         id: 'garden',
-        label: 'Garden Villament',
+        label: '🌿 Garden Villament',
         tag: 'Ground Floor',
-        icon: '🌿',
         image: '/images/img3.png',
         desc: 'A ground-floor luxury residence with an exclusive private garden, perfect for families who love outdoor living. Seamlessly blends indoor comfort with lush outdoor space.',
         specs: [
@@ -20,9 +19,8 @@ const plans = [
     },
     {
         id: 'terrace',
-        label: 'Terrace Villament',
+        label: '🌅 Terrace Villament',
         tag: 'Top Floor',
-        icon: '🌅',
         image: '/images/img4.png',
         desc: 'An exclusive top-floor residence with a private terrace offering panoramic views of the surrounding greenery and city skyline. The ultimate sky-high living experience.',
         specs: [
@@ -36,9 +34,8 @@ const plans = [
     },
     {
         id: 'duplex',
-        label: 'Duplex',
+        label: '🏛️ Duplex',
         tag: 'G + 1 Floor',
-        icon: '🏛️',
         image: '/images/img5.png',
         desc: 'A sprawling two-level residence that combines the grandeur of an independent villa with the conveniences of a gated community. The largest and most premium offering.',
         specs: [
@@ -79,7 +76,6 @@ export default function FloorPlans() {
                             className={`floorplans__tab ${active === p.id ? 'floorplans__tab--active' : ''}`}
                             onClick={() => setActive(p.id)}
                         >
-                            <span>{p.icon}</span>
                             <span>{p.label}</span>
                             <span className="floorplans__tab-tag">{p.tag}</span>
                         </button>
@@ -92,7 +88,6 @@ export default function FloorPlans() {
                     <div className="floorplans__visual">
                         <div className="floorplans__plan-render">
                             <div className="floorplans__plan-header">
-                                <div className="floorplans__plan-icon">{plan.icon}</div>
                                 <div>
                                     <div className="floorplans__plan-name">{plan.label}</div>
                                     <div className="floorplans__plan-sublabel">Floor Plan — {plan.tag}</div>

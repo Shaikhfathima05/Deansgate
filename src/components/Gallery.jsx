@@ -65,7 +65,7 @@ export default function Gallery() {
                 <div className="gallery__header">
                     <span className="section-label">Artistic Impressions</span>
                     <h2 className="section-title">
-                        A Glimpse of <span>Deansgate</span>
+                        🏡 A Glimpse of <span>Deansgate</span>
                     </h2>
                     <div className="gold-divider" style={{ margin: '1.5rem auto' }} />
                     <p className="section-subtitle" style={{ margin: '0 auto' }}>

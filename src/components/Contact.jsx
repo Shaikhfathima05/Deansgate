@@ -71,7 +71,7 @@ export default function Contact() {
                     <div className="contact__info">
                         <span className="section-label">Get In Touch</span>
                         <h2 className="section-title">
-                            Start Your <span>Journey</span>
+                            💬 Start Your <span>Journey</span>
                         </h2>
                         <div className="gold-divider" />
                         <p className="contact__info-desc">
@@ -81,28 +81,24 @@ export default function Contact() {
 
                         <div className="contact__details">
                             <div className="contact__detail">
-                                <div className="contact__detail-icon">📞</div>
                                 <div>
                                     <span className="contact__detail-label">Phone</span>
                                     <a href="tel:+919844935531" className="contact__detail-value">+91 98449 35531</a>
                                 </div>
                             </div>
                             <div className="contact__detail">
-                                <div className="contact__detail-icon">✉️</div>
                                 <div>
                                     <span className="contact__detail-label">Email</span>
                                     <a href="mailto:support@winstoneprojects.com" className="contact__detail-value">support@winstoneprojects.com</a>
                                 </div>
                             </div>
                             <div className="contact__detail">
-                                <div className="contact__detail-icon">📍</div>
                                 <div>
                                     <span className="contact__detail-label">Address</span>
                                     <span className="contact__detail-value">IVC Road, Yelahanka,<br />Bengaluru – 560064, Karnataka</span>
                                 </div>
                             </div>
                             <div className="contact__detail">
-                                <div className="contact__detail-icon">🕐</div>
                                 <div>
                                     <span className="contact__detail-label">Site Visit Hours</span>
                                     <span className="contact__detail-value">Mon – Sun: 10 AM – 6 PM</span>
@@ -139,7 +135,6 @@ export default function Contact() {
                     <div className="contact__form-wrapper">
                         {submitted ? (
                             <div className="contact__success">
-                                <div className="contact__success-icon">✅</div>
                                 <h3>Thank You!</h3>
                                 <p>We've received your enquiry. Our sales team will contact you within 24 hours.</p>
                                 <button className="btn-primary" onClick={() => { setSubmitted(false); setForm({ name: '', email: '', phone: '', unittype: '', message: '' }); }}>
